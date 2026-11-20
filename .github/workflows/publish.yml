@@ -1,0 +1,24 @@
+# Publishes to npm when a version tag (0.1.0, no "v") is pushed, by trusted publishing: no token. The package's
+# trusted publisher on npmjs.com names this repository and this workflow file.
+name: Publish
+on:
+  push:
+    tags: ["*.*.*"]
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest
+      - run: npm ci
+      - run: npm test
+      - name: The tag matches package.json
+        run: test "$(node -p 'require("./package.json").version')" = "${GITHUB_REF_NAME}"
+      - run: npm publish --access public
