@@ -1,20 +1,45 @@
 {
   "name": "@rizamo/ai-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rizamo tools for the Vercel AI SDK: publish, schedule and measure social posts on Instagram, Facebook, TikTok, Threads, LinkedIn and YouTube, and answer comments and messages.",
-  "keywords": ["rizamo", "ai-sdk", "vercel-ai-sdk", "ai", "tools", "agents", "social-media", "social-media-api", "instagram", "tiktok", "linkedin", "youtube"],
+  "keywords": [
+    "rizamo",
+    "ai-sdk",
+    "vercel-ai-sdk",
+    "ai",
+    "tools",
+    "agents",
+    "social-media",
+    "social-media-api",
+    "instagram",
+    "tiktok",
+    "linkedin",
+    "youtube"
+  ],
   "homepage": "https://docs.rizamo.com/frameworks/vercel-ai-sdk",
-  "bugs": { "url": "https://github.com/rizamohq/rizamo-ai-sdk/issues" },
-  "repository": { "type": "git", "url": "git+https://github.com/rizamohq/rizamo-ai-sdk.git" },
+  "bugs": {
+    "url": "https://github.com/rizamohq/rizamo-ai-sdk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rizamohq/rizamo-ai-sdk.git"
+  },
   "license": "MIT",
   "author": "Rizamo <hi@rizamo.com> (https://rizamo.com)",
   "type": "module",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" }
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
